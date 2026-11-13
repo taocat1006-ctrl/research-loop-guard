@@ -1,43 +1,57 @@
-# research-loop-guard
+# Research Loop Guard
 
-科研止损与迭代守则：让每轮探索产生可判断的知识增量，避免反复补实验、补证据和失败后无限重启。
+A Codex skill for deciding when to continue, redirect, or stop a research iteration.
 
-这是一个以中文编写的 Codex skill，适用于规划下一轮研究、判断继续或停止，以及复盘长期未收敛的研究。普通论文解读和单次代码修复无需套用完整流程。
+Research can stall even while every individual task looks productive: another extraction fix, another evaluation field, another round of evidence. Research Loop Guard ties each iteration to a question, a decision, and a cumulative budget so that activity does not substitute for progress.
 
-## 它做什么
+## What it does
 
-- 恢复当前问题、已有结果及最近有效决定，优先复用已有材料。
-- 用简短决策卡明确本轮问题、证据、结果对应的行动、预算和停止条件。
-- 将预算累计到父问题，区分开发结果、独立验证、技术故障和科学失败。
-- 默认在连续两轮只补组件或材料、却未改变父问题决策时停止扩张；用户可事先调整该规则。
-- 对已经停止的分支要求具体重启依据；用户明确授权重启后，不重复索要确认。
+- Recovers the current question, existing evidence, and latest effective decision before starting another experiment.
+- Uses a short decision card to define the question, evidence, outcome-dependent actions, budget, and stopping conditions.
+- Tracks effort against the parent research question across iterations, chats, and renamed experiments.
+- Separates technical failure, development results, independent validation, and scientific evidence.
+- Stops automatic expansion after two consecutive iterations that add components or materials without changing the parent decision; users can adjust this default in advance.
+- Requires a concrete rationale to restart a stopped branch, while honoring an explicit restart instruction without asking again.
 
-## 安装
+## When to use it
 
-克隆到 Codex 的 skills 目录（若设置了自定义 CODEX_HOME，请使用对应的 skills 目录）：
+Use it to plan the next experiment, assess a stalled project, decide whether another check is worth doing, or review a proposed restart. Ordinary paper summaries and isolated code fixes do not need the full workflow.
+
+The aim is useful knowledge and a justified decision. A descriptive finding, a counterexample, or a clear account of uncertainty can all be valid outcomes.
+
+## Installation
+
+Clone the repository into your Codex skills directory:
 
 ```bash
 git clone https://github.com/taocat1006-ctrl/research-loop-guard.git ~/.codex/skills/research-loop-guard
 ```
 
-如果目标目录已存在，先保留或备份已有版本，再决定如何合并。重新打开 Codex 会话以加载 skill。
+If you use a custom `CODEX_HOME`, use its `skills` directory instead. If the destination already exists, preserve or back up your existing version before deciding how to merge it. Start a new Codex session to load the skill.
 
-## 使用
-
-在 Codex 中输入：
+## Usage
 
 ```text
-请使用 $research-loop-guard，结合已有记录判断下一轮科研是否值得做，
-并限定本轮问题、预算和停止条件。
+Use $research-loop-guard to review our existing records and decide whether
+another research iteration is worthwhile. Define the question, budget,
+and stopping conditions for any justified next step.
 ```
 
-也可用于“是否陷入补实验循环”“这轮是否该停”“已停止的方向是否有充分理由重启”等请求。
+Other useful requests:
 
-## 文件
+- "Are we learning something new, or just patching the same failed approach?"
+- "Do the current results already support a decision?"
+- "Is there enough new evidence to justify restarting this branch?"
 
-- [SKILL.md](SKILL.md)：核心研究决策规则。
-- [references/decision-card.md](references/decision-card.md)：单轮决策卡模板。
-- [references/behavior-examples.md](references/behavior-examples.md)：通用情境与行为检查。
-- [agents/openai.yaml](agents/openai.yaml)：Codex 的显示名称及默认提示。
+## Repository contents
 
-本仓库是通用发布版本，未包含私人项目记录或本机证据路径。案例仅为示意，不是独立测评。该 skill 限定研究决策，不提供额外执行权限，也不保证研究成功或论文录用。
+| File | Purpose |
+|---|---|
+| [SKILL.md](SKILL.md) | Core research decision rules. |
+| [references/decision-card.md](references/decision-card.md) | A reusable decision card for one iteration. |
+| [references/behavior-examples.md](references/behavior-examples.md) | Hypothetical scenarios and expected behavior. |
+| [agents/openai.yaml](agents/openai.yaml) | Codex display metadata and default prompt. |
+
+## Scope
+
+This is a general-purpose release without private project records or local evidence paths. Examples are illustrative, not independent evaluation results. The skill governs research decisions; it grants no additional execution permissions and does not guarantee research success or publication acceptance.
