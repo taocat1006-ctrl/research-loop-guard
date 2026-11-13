@@ -1,0 +1,4 @@
+interface:
+  display_name: "科研止损与迭代守则"
+  short_description: "把科研探索收敛到可改变决策的问题，约束补丁、复核和失败后重启"
+  default_prompt: "请使用 $research-loop-guard，结合已有记录判断下一轮科研是否值得做，并限定本轮问题、预算和停止条件。"
