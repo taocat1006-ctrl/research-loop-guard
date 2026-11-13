@@ -1,29 +1,29 @@
-# 单轮科研决策卡
+# Research Decision Card
 
-复制到现有项目记录即可；已有协议覆盖的内容直接链接，不重复填表。不需要为历史上百轮追补全部卡片。
+Copy this into the project's existing records. Link to an existing protocol instead of filling in duplicate fields. Do not reconstruct cards for every historical iteration.
 
-**日期 / 父问题 / 当前状态：**
+**Date / parent question / current state:**
 
-**已知结果与最近停止决定：** 链接最近有效记录；哪些路径已经关闭？
+**Known results and latest stop decision:** Link to the latest effective records. Which branches are already closed?
 
-**本轮唯一问题：** 用可回答的话写清，不写“继续完善系统”。探索轮写观察范围及需要收敛的认识。
+**This iteration's single question:** Make it answerable; avoid goals such as "keep improving the system." For exploration, specify the observation scope and the understanding to be reached.
 
-**为什么值得做：** 目前哪两种解释或选择无法区分？不同输出怎样改变父问题决策？
+**Why this is worth doing:** Which explanations or choices remain indistinguishable? How would different outcomes change the parent decision?
 
-**最小证据：** 材料及来源；复用方法/改动；对照或反例；主要观察及判定依据；结果能够支持的范围。
+**Minimum evidence:** Materials and provenance; reused methods and adaptations; controls or counterexamples; primary observations and decision criteria; the scope the results can support.
 
-**结果 → 决策：**
+**Outcomes and decisions:**
 
-| 情况 | 具体判断依据 | 随后决定 |
+| Outcome | Concrete criteria | Decision |
 |---|---|---|
-| 支持 | 根据任务设定，不临时放宽 | 交付，或执行哪一个后续阶段 |
-| 反对/未达门槛 | 区别局部错误与关键失败 | 停止哪个分支/放弃哪个主张 |
-| 无法判断 | 缺失、混合结果、评价不适配等 | 预算内哪项有限修复，或带不确定性结束 |
+| Support | Set from the task; do not relax during execution. | Deliver, or name the next authorized stage. |
+| Opposition / threshold not met | Distinguish local errors from failure of the key requirement. | Identify the branch to stop or claim to abandon. |
+| Inconclusive | Missing data, mixed results, or a mismatch between evaluation and claim. | Name a bounded repair within budget, or close with uncertainty. |
 
-**预算：** 本轮最多调用/样本/时间；技术修复额度；父问题已投入及剩余上限。明确父问题预算，避免每轮重置。
+**Budget:** Call/sample/time limits for this iteration; technical repair allowance; cumulative expenditure and remaining cap for the parent question. Do not reset the parent budget at each iteration.
 
-**停止：** 哪个条件满足即结束？本轮不顺利时，哪些补丁不得自动启动？
+**Stop:** Which conditions end the iteration? Which patches must not start automatically if it fails?
 
-**结束后补四行：** 实际结果及证据链接；支持/不支持的范围；继续/停止/转向决定；本轮及父问题累计消耗。
+**Complete these four lines afterward:** Actual result and evidence links; scope of support or opposition; continue/stop/redirect decision; expenditure for this iteration and cumulative expenditure for the parent question.
 
-**仅在申请重启时补：** 相比停止时新增什么信息或有依据的干预？为何能改变关键判断？最小区分实验及新上限是什么？不要把同一失败换名为新问题。
+**For a restart proposal only:** What new information or grounded intervention has appeared since stopping? Why could it change the key judgment? What is the smallest discriminating experiment and its new budget cap? Do not rename the same failure as a new question.
