@@ -1,104 +1,109 @@
+
 ---
 name: research-loop-guard
 description: >-
-  约束科研探索中的实验扩张、反复补证据和失败后重启。适用于规划下一轮实验、判断继续或停止、复盘长期无收敛的项目，以及用户担心科研陷入死循环时。将问题、证据和投入连接到明确决策；普通论文解读和单次代码修复无需套用完整流程。
+  Keep research iterations bounded and tied to decisions. Use when planning the next
+  experiment, deciding whether to continue or stop, reviewing a stalled project, or
+  diagnosing repeated evidence gathering and restarts. Connect questions, evidence,
+  and cumulative effort to an explicit decision. Ordinary paper summaries and
+  isolated code fixes do not need the full workflow.
 ---
 
-# 科研止损与迭代守则
+# Research Loop Guard
 
-目的：让探索产生可判断的知识增量，防止把“还有东西可做”当成“值得继续做”。支持有价值的想法发展，不以相似工作、一次失败或未达发表标准直接否定方向。
+Make exploration produce knowledge that can inform a decision. Having more work available is not, by itself, a reason to continue. Support promising ideas without dismissing an entire direction because of related work, one failed version, or results that are not yet publishable.
 
-本 skill 约束研究决策，不提供模型调用、外部发送、自动续跑或委派授权。用户当前指令优先；预算内已授权工作直接完成，不逐项求确认。对既有停止决定的适用见下文。
+This skill governs research decisions. It does not authorize model calls, external communication, unattended continuation, or delegation. Follow the user's current instructions and complete already authorized work within its budget without asking for confirmation at every step. Previously stopped branches require the treatment below.
 
-## 先恢复决策，不先开实验
+## Recover the decision before running another experiment
 
-查找当前问题、最近结果和最新停止决定，优先复用已有协议、分析与原始输出。区分历史建议和现行决定；旧报告里的“下一步”不自动获得执行资格。
+Find the current question, recent results, and latest stop decision. Reuse existing protocols, analyses, and raw outputs. Distinguish historical suggestions from current decisions: a next step in an old report is not automatically authorized.
 
-核实当前项目最近一次有效决定及用户是否已明确变更决定。不要把历史建议当作现行授权，也不要把一个版本失败扩大成整个方向失败。需要判断典型情境时，可参照 [通用行为案例](references/behavior-examples.md)；案例不代表当前项目的实际状态。
+Check the project's latest effective decision and whether the user has explicitly changed it. Do not turn one version's failure into a verdict on the entire research direction. Consult the [behavior examples](references/behavior-examples.md) when a typical situation needs clarification; these examples do not establish the current project's status.
 
-将当前工作判为以下一种；不清楚时先做最小必要的记录核对：
+Classify the current work. If the state is unclear, inspect only the records needed to resolve it.
 
-| 状态 | 处理 |
+| State | Action |
 |---|---|
-| 探索中，问题尚未形成 | 在有限材料上寻找具体差异、组合和反例，允许得到描述性观察；不先造完整框架 |
-| 可检验问题已形成，尚无有区分力结果 | 选择一个最能改变继续决策的有限实验 |
-| 已有结果，足以做当前决策 | 解释并作决定，不追加“再保险”复核 |
-| 技术故障使问题尚未被检验 | 将故障与科学结果分开，按既定修复预算处理 |
-| 已触及预算或停止条件 | 结束该分支；不自动由错误派生下一项研究 |
+| Exploring; no specific question yet | Look for concrete differences, combinations, and counterexamples within a bounded set of materials. Descriptive observations are valid; do not build a complete framework first. |
+| A testable question exists, but no result distinguishes the main explanations | Choose one bounded experiment most likely to change the decision to continue. |
+| Existing results are sufficient for the current decision | Explain the results and decide. Do not add checks merely for reassurance. |
+| A technical failure prevented a valid test | Separate the failure from the scientific question and use the agreed repair budget. |
+| A budget or stopping condition has been reached | Close the branch. Do not automatically turn each error into another research task. |
 
-## 开工前只写一张简短决策卡
+## Write one short decision card
 
-复用项目现有记录；没有时使用 [决策卡模板](references/decision-card.md)。不要为本 skill 新建一套大型管理系统。常规一轮约半页至一页，至少说清：
+Reuse the project's records. If none exist, use the [decision card template](references/decision-card.md). Do not create a separate management system for this skill. A normal iteration needs roughly half a page to one page covering:
 
-1. **父问题与本轮问题。** 本轮只消除哪个关键不确定性？为何它决定父问题能否推进？
-2. **结果会改变什么。** 具体写出支持、反对、无法判断时各做什么；若所有结果都通向“继续补实验”，本轮缺少决策作用。
-3. **证据是否适配。** 当前材料、对照与评价能回答哪一级问题？成功输出与合理替代解释如何区分？
-4. **最小执行与总预算。** 材料、主要观察量、调用/样本/时间上限、允许的技术修复；继承父问题的累计投入，不能靠换文件夹或改名清零。
-5. **结束条件。** 何时足够回答，何时停止，哪些情况确实只能记为不确定；门槛需有任务依据，不临时发明零错误标准。
+1. **Parent question and current question.** Which single uncertainty does this iteration address, and why does it determine progress on the parent question?
+2. **What the result changes.** State the action for supporting, opposing, and inconclusive results. If every outcome leads to more experiments, the iteration lacks a decision purpose.
+3. **Fit between evidence and claim.** What level of question can the materials, controls, and evaluation answer? How would a successful output differ from plausible alternative explanations?
+4. **Minimum execution and total budget.** Specify materials, primary observations, call/sample/time limits, and permitted technical repairs. Carry forward cumulative effort on the parent question; renaming the task or changing folders does not reset it.
+5. **Completion and stopping conditions.** State when the evidence is sufficient, when to stop, and when uncertainty is the only justified conclusion. Base thresholds on the task; do not invent a zero-error standard during execution.
 
-探索不必预知模式，也不必预先完成统计检验设计，但需限定观察范围及收敛产物，例如：列出有原文支持的重复组合及不符合它的案例，决定是否值得形成假设。不能用“开放探索”豁免预算。
+Exploration does not require knowing the pattern in advance or completing a statistical test design first. It does require a bounded observation scope and a concrete deliverable: for example, source-supported recurring combinations and counterexamples, followed by a decision on whether to formulate a hypothesis. Open exploration does not waive the budget.
 
-未给预算时，提出与任务规模相称的保守上限并明确采用的假设，在已有授权内执行。对已停止分支，先提交具体重启理由，不能自行采用默认预算恢复实验。
+If no budget is specified, state a conservative limit proportionate to the task, make assumptions explicit, and proceed within existing authorization. For a stopped branch, first provide a concrete restart rationale; do not resume experiments under a self-assigned default budget.
 
-历史累计无法可靠恢复时记为未知，保留已知下界并限定从现在起的剩余额度；不要为填写预算再启动一轮历史考古。
+If historical expenditure cannot be recovered reliably, record it as unknown, retain any known lower bound, and cap the remaining effort from now on. Do not launch a historical investigation just to fill in the budget field.
 
-## 优先做能影响父问题的工作
+## Prefer work that can change the parent decision
 
-执行前用一句话回答：**这一步的不同结果，将怎样改变我们的研究判断？**
+Before acting, answer in one sentence: **How would different outcomes of this step change our research judgment?**
 
-- 单纯增加引文、字段、案例、审计文件或更整齐的图，不自动构成知识增量。必要工程能做，但记为工程，设置交付边界。
-- 组件实验需明确结果能排除哪个父问题障碍。组件指标改善，不自动证明主张成立或值得投顶会。
-- 先用现成方法、提示词和已有材料解决当前问题。自定义方法需指出具体不足及新增价值；自拟适配不能称严格复现。
-- 有相似工作时，比较最近工作的真实机制、输入、目标与限制。能形成实质差异就发展；不能时坦诚指出重合及可调整处。定向查证，不无限寻找“绝对无人做过”。
-- 多个候选下一步只选当前最有决策价值的一项；其余可留一行待办，不自动执行或派生研究链。
+- More citations, fields, examples, audit files, or cleaner figures do not automatically add knowledge. Necessary engineering is legitimate; label it as engineering and define its delivery boundary.
+- A component experiment must identify which obstacle to the parent question its result can rule out. A better component score does not establish the overall claim or justify a top-tier submission.
+- Start with existing methods, prompts, and materials. A custom method needs a specific unmet need and a clear contribution. Do not describe a custom adaptation as an exact reproduction.
+- When related work exists, compare the closest work's actual mechanisms, inputs, objectives, and limitations. Develop substantive differences where they exist; otherwise explain the overlap and possible adjustments. Verify specific points instead of searching indefinitely for proof that nobody has ever tried the idea.
+- Among candidate next steps, choose the one with the greatest current decision value. Other ideas may remain as brief backlog notes; do not execute them automatically or build a chain of derivative studies.
 
-## 执行时防止目标移动
+## Prevent the target from moving during execution
 
-保留原始输入、输出、规则与版本；改动需说明改变了什么问题。
+Preserve original inputs, outputs, rules, and versions. Explain how each change affects the question being tested.
 
-- 同一任务、模型、预算和评价下的技术重跑才能作为原比较的修复；保留失败记录，不挑成功回包。未约定时，默认只安排一次有具体诊断依据的有限修复批次，之后收束。
-- 改提示词、模型、粒度、语料、标签、评价规则或输出上限，可能是合理开发，但属于新的开发条件；计入父问题预算，不能覆盖原结果或沿用原冻结评估的名义。
-- 看过答案、失败案例或人工纠正后再修改方案，后续同材料结果标为开发/回溯结果，不称独立验证。人工补回的正确答案与自动输出分开。
-- 检查只覆盖会改变结论的未解疑点。主要结论及必要校验已经成立，就交付；不为了完美证据再造“审计的审计”。
-- 若本轮只增加细节，没有推进父问题，先说明决策仍未改变；下一步不得自动降级成另一个更小的组件问题。
+- A technical rerun repairs the original comparison only when the task, model, budget, and evaluation remain the same. Keep failures and do not select only successful responses. Unless otherwise agreed, allow one bounded repair batch supported by a specific diagnosis, then close the iteration.
+- Changes to prompts, models, granularity, corpora, labels, evaluation rules, or output limits may be valid development, but create new development conditions. Charge them to the parent budget. Do not overwrite the original results or present them as the original frozen evaluation.
+- After inspecting answers, failure cases, or human corrections, label subsequent results on the same materials as development or retrospective results. Do not call them independent validation. Keep human-supplied corrections separate from automated output.
+- Check only unresolved issues that could change the conclusion. Once the main conclusion and necessary validation are established, deliver. Do not create an audit of the audit in pursuit of perfect evidence.
+- If an iteration adds detail without advancing the parent question, state that the decision has not changed. Do not automatically replace the next step with an even smaller component question.
 
-## 四种结论分别处理
+## Separate four kinds of conclusions
 
-| 结论 | 可以说什么 | 随后行动 |
+| Conclusion | Justified statement | Next action |
 |---|---|---|
-| 当前范围支持 | 说明对象、条件、实际增量和仍在的替代解释 | 执行预定继续决定，或直接交付；不承诺录用 |
-| 有效检验未达门槛 | 该版本在该任务上未达到要求 | 执行停止/转向，不自动追加救援实验 |
-| 证据不足或结果混合 | 明确还无法区分什么，不能当作有或无效果 | 仅在原预算允许且能解决关键歧义时补做，否则以不确定结束 |
-| 技术上未完成有效检验 | 说明故障、覆盖与缺失，不能据此否定科学主张 | 有界修复；无法恢复就结束本轮 |
+| Supported within the current scope | Specify the objects, conditions, actual gain, and remaining alternative explanations. | Follow the planned continuation decision or deliver. Do not promise publication acceptance. |
+| A valid test did not meet the threshold | This version did not meet the requirement on this task. | Stop or redirect as planned. Do not automatically add rescue experiments. |
+| Insufficient or mixed evidence | State what remains indistinguishable; do not treat uncertainty as either an effect or no effect. | Add work only if the original budget permits it and it can resolve the key ambiguity; otherwise close with uncertainty. |
+| No valid test was completed because of technical failure | Describe the fault, coverage, and missing data. This does not refute the scientific claim. | Attempt bounded repair; if recovery fails, close the iteration. |
 
-描述性发现本身可作为阶段结果，不要求每条观察先达到完整论文证明标准。反过来，样例、候选和人工整理也不能升级成一般规律。
+Descriptive findings can be valid intermediate results. Every observation need not satisfy the proof standard of a complete paper. Conversely, examples, candidates, and human curation cannot be promoted into general laws.
 
-## 停止必须真的生效
+## Make stopping effective
 
-以下任一情况出现，就停止该分支的自动扩张并交付已有结论：
+Stop automatic expansion of the branch and deliver the existing conclusion when any of the following holds:
 
-- 达到预先写明的失败门槛、时间/调用/样本预算，或用户明确要求停下。
-- 下一步仍无法区分主要解释，或评价目标与想证明的主张不匹配。
-- 连续两轮只补表示、材料、核验或组件，却没有改变同一父问题的研究决策。此条是本 skill 的默认止损规则，可由用户事先调整；跨聊天、改名、换目录仍算同一链条。
+- A predefined failure threshold, time/call/sample budget, or explicit user stop instruction has been reached.
+- The proposed next step still cannot distinguish the main explanations, or the evaluation target does not match the claim.
+- Two consecutive iterations add representations, materials, checks, or components without changing the research decision on the same parent question. This is the skill's default stopping rule; the user may adjust it in advance. A new chat, name, or directory still belongs to the same research chain.
 
-停止后不把发现的每个错误改写成待执行任务，不以“快成功了”“模型还会错”“再确认一次”“钱和算力都够”作为续做理由。
+After stopping, do not turn every discovered error into an executable task. Near-success, remaining model errors, a desire for one more check, or available money and compute are not sufficient reasons to continue.
 
-重启需具体说明：新信息或干预依据是什么；为什么它能改变上次未解决的关键问题；最小新实验怎样区分解释；沿用哪些旧失败；最多投入多少。修抽取、加字段或换模型可以是干预，但名称本身不是依据，需要定位其与失败及父问题的关系。重启应可被否决，不能靠重新命名问题绕过停止决定。
+A restart proposal must specify the new information or grounded intervention, why it could resolve the previous key uncertainty, the smallest experiment that distinguishes the explanations, which prior failures remain relevant, and the maximum new investment. Fixing extraction, adding fields, or changing models may be an intervention, but naming a change is not a rationale: connect it to the failure mechanism and parent question. A restart must be open to rejection; renaming the question must not bypass a stop decision.
 
-对用户已明确停止或本项目已约定停止的分支，先给出上述具体方案并等待明确重启指令。引用本段及原停止依据，解释为何不能直接续跑；不要把这要求扩展成所有正常迭代都要许可。整理、解释、写作与 skill 维护不等于重启实验。
+For a branch explicitly stopped by the user or under an agreed project decision, present that concrete proposal and wait for an explicit restart instruction. Cite this requirement and the original stop basis to explain why execution cannot simply resume. Do not extend this requirement to ordinary authorized iterations. Organizing results, explaining, writing, and maintaining this skill do not restart experiments.
 
-若当前用户已经明确要求重启并指定行动，该指令就是授权，不重复索要确认；记录新范围、依据与有限预算后执行。不能将仅询问可行性或泛泛表示焦虑解释为重启。
+If the current user has already explicitly requested a restart and specified the action, that instruction is authorization. Record the new scope, rationale, and bounded budget, then execute without asking again. A feasibility question or general expression of concern is not a restart instruction.
 
-## 证据边界与交付
+## Respect evidence boundaries and deliver
 
-保留与当前问题有关的区别，不为凑齐清单创造额外实验：
+Preserve distinctions relevant to the current question; do not generate extra experiments just to complete a checklist.
 
-- 引文命中不等于语义支持；操作形式近似不等于整套方法同构或可互换。
-- 人工整理、模型输出、外部标注的来源应清楚；不一律要求独立专家，也不将自身复核冒充独立证据。
-- 已知案例重现不等于新类比发现；正文出现已知联系或模型记忆尚在，就不能声称排除知识泄漏。
-- 同源样本、变体和穷举表格不能当作独立论文数；覆盖不一致的系统不直接比较成功比例。
-- 未观察到增益不等于无效；一个版本失败不等于方向不可能；局部成立不等于普遍规律。
+- A citation match is not semantic support. Similar operations do not establish that entire methods are structurally equivalent or interchangeable.
+- Identify the provenance of human curation, model outputs, and external annotations. Independent experts are not universally required, but self-review is not independent evidence.
+- Reproducing a known case is not discovering a new analogy. If the source states the connection or model memory remains a plausible explanation, do not claim that knowledge leakage has been ruled out.
+- Samples from the same source, variants, and exhaustive table entries are not independent papers. Do not directly compare success rates when systems have different coverage.
+- No observed gain does not prove ineffectiveness. One failed version does not establish impossibility. A local result is not a universal law.
 
-每轮末尾写清 **结果—支持范围—决策—累计预算**，附关键原始证据链接。先回答研究问题，少讲执行流水账；无须每轮同时生成多种报告格式。阶段交付可以是小而确定的发现、有效反例、清晰的不确定结论或停止决定。
+End each iteration with **result, scope of support, decision, and cumulative expenditure**, linked to the key raw evidence. Answer the research question before recounting execution details. Multiple report formats are not required for every iteration. A small reliable finding, a valid counterexample, a clear statement of uncertainty, or a stop decision can each be a useful deliverable.
 
-如果用户问“值不值得做/是否陷入死循环”，先客观判断并解释，不以安慰代替结论，也不靠启动新实验回应焦虑。本 skill 降低失控风险，不能保证研究成功或顶会录用。
+When asked whether a direction is worth pursuing or has become a loop, give an objective assessment and explanation first. Do not substitute reassurance for judgment or start experiments in response to anxiety. This skill reduces uncontrolled iteration; it cannot guarantee research success or acceptance at a top-tier venue.
