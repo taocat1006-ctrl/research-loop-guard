@@ -1,23 +1,23 @@
-# 通用行为案例
+# Behavior Examples
 
-以下为示意情境，用于检查研究决策是否符合本 skill；不来自任何特定项目，不是实际测评结果，也不预设当前项目已停止。
+These hypothetical scenarios illustrate the skill's research decisions. They are not records from a particular project, evaluation results, or evidence that the current project has stopped.
 
-| 情境 | 应有行为 |
+| Scenario | Expected behavior |
 |---|---|
-| 原型未达到预登记门槛，询问“改粒度能不能成功？” | 分析可能性，说明干预如何对应失败机制；若该分支已经停止，先提出有限重启方案，等待明确重启指令。 |
-| “明确重启，就改粒度再做一轮，不扩样本。” | 当前指令已授权；记录新条件、依据和预算，保留旧失败，只执行这一轮。 |
-| 接口超时，询问“是不是方向不成立？” | 将技术故障与科学失败分开；在既定修复预算内处理，不能据此否定科学主张。 |
-| “再核对十篇文献会更保险。” | 先判断是否存在会改变决策的具体疑点；没有就交付已有结论。 |
-| 已停止实验，要求整理现有结果作汇报 | 在已有证据内完成写作；整理不等于重启，也不自动授权补实验。 |
-| 新想法存在相似工作 | 定向核对机制、输入、目标及限制；有实质差异就发展，重合则坦诚说明。 |
-| 开放探索组合规律，尚未提出模型优于基线的主张 | 设定有限观察范围，保留组合、原文与反例，允许以描述性发现收束。 |
-| 连续两轮都只发现还需加字段，准备换名继续 | 按同一父问题累计投入，应用默认停止规则；换名不重置预算。 |
-| 各条件成功回包的覆盖不同，想直接比较比例 | 说明缺失与覆盖差异，不能把不一致的分母当作可比效果。 |
-| 看过失败案例后修改提示词，同材料表现提高 | 标为开发或回溯结果，保留原结果，不能称独立验证。 |
+| A prototype missed a preregistered threshold. "Could changing the granularity make it work?" | Discuss feasibility and connect the intervention to the failure mechanism. If the branch has stopped, propose a bounded restart and wait for an explicit restart instruction. |
+| "Restart explicitly: change the granularity for one more iteration, without expanding the sample." | Treat the instruction as authorization. Record the conditions, rationale, and budget; preserve prior failures; execute only this iteration. |
+| An API timed out. "Does this mean the direction is invalid?" | Separate technical failure from scientific failure. Use the agreed repair budget; do not infer that the scientific claim has been refuted. |
+| "Checking ten more papers would be safer." | Identify a specific unresolved issue that could change the decision. If none exists, deliver the current conclusion. |
+| Experiments have stopped, but the user requests a report on existing results. | Complete the writing within existing evidence. Reporting is not a restart and does not authorize new experiments. |
+| Closely related work exists. | Compare mechanisms, inputs, objectives, and limitations. Develop substantive differences; acknowledge overlap honestly. |
+| The goal is to explore recurring combinations, without yet claiming that a model beats a baseline. | Bound the observation scope, preserve source evidence and counterexamples, and allow a descriptive finding to close the iteration. |
+| Two iterations only identified more fields to add; a renamed experiment is proposed. | Accumulate effort under the same parent question and apply the default stopping rule. Renaming does not reset the budget. |
+| Conditions have different successful-response coverage, but someone wants to compare success rates directly. | Explain missingness and coverage differences. Inconsistent denominators do not establish a comparable effect. |
+| A prompt is revised after reviewing failures and improves on the same materials. | Label the result as development or retrospective evidence. Preserve the original results; do not call this independent validation. |
 
-## 可迁移的教训
+## Transferable lessons
 
-- 局部实验有预算，不代表整个父问题有边界；预算须沿研究链累计。
-- 组件指标变好不自动支持总体研究主张。执行前说明其不同结果会如何改变父问题决策。
-- 引文能定位不代表语义上支持结论；人工纠正不能回填为自动成功。
-- 失败可定位一个版本的限制，无须否定整个研究方向；同样不能为了保留方向制造成功。
+- Bounded component experiments do not ensure a bounded parent investigation. Track cumulative effort across the research chain.
+- A component improvement does not automatically support the overall claim. State how different outcomes would change the parent decision before execution.
+- A locatable citation does not necessarily support the claim. Human corrections must not be counted as automated successes.
+- Failure can identify one version's limits without invalidating the entire direction. Preserving a direction does not justify manufacturing success.
