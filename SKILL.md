@@ -1,4 +1,3 @@
-
 ---
 name: research-loop-guard
 description: >-
